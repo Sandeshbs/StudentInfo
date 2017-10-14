@@ -1,6 +1,5 @@
 package com.sandesh.controller;
 
-import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import com.sandesh.service.StudentService;
 @Controller
 @RequestMapping("/student")
 public class StudentController {
-	
+
 	@Autowired
 	private StudentService studentService;
 	
@@ -47,10 +46,13 @@ public class StudentController {
 	
 	@PostMapping("/save")
 	public String saveStudent(@ModelAttribute Student student,HttpServletRequest request) {
-		student.setDate(new Date());
+		//student.setDate(new Date());
 		studentService.saveStudent(student);
 		request.setAttribute("students",studentService.studentList());
 		request.setAttribute("mode", "MODE_LIST");
+		
+		System.out.println("Date updated :"+student.getDate());
+		
 		return "student";
 	}
 	

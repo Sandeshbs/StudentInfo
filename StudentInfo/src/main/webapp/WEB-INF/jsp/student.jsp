@@ -135,6 +135,13 @@
 					    <input class="form-control" type="text" name="branch" value="${student.branch}" id="branch" />
 					  </div>
 					</div>
+					
+					<div class="form-group row">
+					  <label for="example-date-input" class="col-2 col-form-label">Date</label>
+					  <div class="col-10">
+					    <input class="form-control date" name="date" type="text" value="${student.date}" id="datepicker">
+					  </div>
+					</div>
 										                    
 	                <div class="form-group row">
 						<label class="control-label col-md-3">Finished</label>
@@ -176,5 +183,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="${pageContext.request.contextPath}/bootstrap/js/jquery-3.1.1.min.js"><\/script>')</script>
     <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+    
+    	<script>
+		
+            jQuery(document).ready(function() {
+                // Date Picker
+                $('#datepicker').datepicker();    	
+            });
+   </script>
+    
   </body>
 </html>
